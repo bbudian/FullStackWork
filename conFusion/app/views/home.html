@@ -6,12 +6,12 @@
         </div>
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
             <div ng-if="!showDish">
-                <h3>{{message}}</h3>
+                <h3>{{dishStatusMessage}}</h3>
             </div>
             <div class="media" ng-if="showDish">
                 <!-- FEATURED DISH -->
                 <div class="media-left media-middle">
-                    <a ui-sref="app.dishdetails({id:featuredDish.id})">
+                    <a ui-sref="app.dishdetails({id: featuredDish.id})">
                         <img class="media-object img-thumbnail" ng-src="{{featuredDish.image}}">
                     </a>
                 </div>
@@ -34,8 +34,10 @@
             <h3 align=center>This Month's Promotions</h3>
         </div>
         <div class="col-xs-12 col-sm-9">
-            <h4>Implement the Promotion Here</h4>
-            <div class="media">
+            <div ng-if="!showPromotion">
+                <h3>{{promotionStatusMessage}}</h3>
+            </div>
+            <div class="media" ng-if="showPromotion">
                 <!-- PROMOTION -->
                 <div class="media-body">
                     <h2 class="media-heading">
@@ -58,8 +60,10 @@
             <h3 align=center>Meet our Culinary Specialists</h3>
         </div>
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-            <h4>Implement the Executive Chef Info Here</h4>
-            <div class="media">
+            <div ng-if="!showChef">
+                <h3>{{chefStatusMessage}}</h3>
+            </div>
+            <div class="media" ng-if="showChef">
                 <!-- EXECUTIVE CHEF -->
                 <div class="media-left media-middle">
                     <img class="media-object img-thumbnail" ng-src="{{executiveChef.image}}">
